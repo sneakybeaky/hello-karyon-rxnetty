@@ -71,7 +71,7 @@ task fatJar(type: Jar) {
 task packDeb(type: Deb, dependsOn: fatJar) {
 
   packageName = project.name
-  release '1'
+  release '5'
 
   requires('openjdk-7-jre-headless')
   from('build/libs/.') {
