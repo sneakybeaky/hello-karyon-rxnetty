@@ -15,14 +15,12 @@
  */
 package com.kenzan.karyon.rxnetty.endpoint;
 
+import com.sun.jersey.api.uri.UriPattern;
 import io.netty.buffer.ByteBuf;
 import io.reactivex.netty.protocol.http.server.HttpServerRequest;
+import rx.Observable;
 
 import java.util.regex.Pattern;
-
-import com.sun.jersey.api.uri.UriPattern;
-
-import rx.Observable;
 
 public class HelloEndpoint {
 
@@ -34,6 +32,6 @@ public class HelloEndpoint {
         UriPattern pattern = new UriPattern(Pattern.compile("/hello/(.*)"));
         String name = pattern.match(request.getUri()).group(1);
 
-        return Observable.just("Hello " + name);
+        return Observable.just("Hello " + name + ", how are you ?");
     }
 }
